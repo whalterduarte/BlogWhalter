@@ -1,0 +1,94 @@
+*{
+  padding:0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+  
+}
+body{
+  background: rgb(19,18,21);
+  background: linear-gradient(186deg, rgba(19, 18, 21, 0.514) 0%, rgba(165, 161, 165, 0.781) 50%, rgba(92, 57, 167, 0.63) 100%);
+}
+#principal{
+  display: flex;
+}
+#menu{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#menu .logo{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #8257e5;
+}
+
+.pesquisa{
+  margin-bottom: 10px;
+  height: 40px;
+  width: 175px;
+}
+
+#menu .botoes{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  margin-bottom: 100px;
+  align-items: center;
+  background: none;
+  
+ 
+}
+.botao{
+  height: 50px;
+  width: 175px;
+  background-color: #201a2e;
+	border-radius:3px;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	
+  border: none;
+
+}
+.botao:hover{
+  background-color:#352e44
+}
+.botao:active{
+  position:relative;
+	top:1px;
+}
+.botaosair{
+  height: 50px;
+  width: 175px;
+  background-color: #8257e5;
+  cursor:pointer;
+  border-radius: 3px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+  border: none;
+  
+}
+
+#conteudo{
+  margin-top: 20px;
+  color: #8257e5;
+  width: 100%;
+  align-items: center;
+  
+  display: flex;
+  flex-direction: column;
+  
+}
+
+

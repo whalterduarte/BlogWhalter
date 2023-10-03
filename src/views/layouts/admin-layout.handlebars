@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleadm.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/style/categorias.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script defer src="/public/js/bootstrap.js"></script>
+    <title>Painel | Blog Whalter</title>
+</head>
+<body>
+    <!-- Div MÃE -->
+    <div id="principal">
+        <!-- Menu -->
+        <div id="menu">
+            <div class="logo"><h1>Painel</h1></div>
+
+            <input
+                class="pesquisa"
+                type="search"
+                name="pesquisa"
+                placeholder="Procurar conteúdo"
+            />
+            <div class="botoes">
+                <a href="/admin"><button class="botao">Painel</button></a>
+                <a href="/admin/categorias"><button class="botao">Categorias</button></a>
+                <a href="/admin/postagens"><button class="botao">Postagens</button></a>
+                <a href="/admin/usuarios"><button class="botao">Usuários</button></a>
+                <a href="/admin/configura"><button class="botao">Configurações</button></a>
+            </div>
+            <button class="botaosair">Sair</button>
+        </div>
+
+        <!-- Conteúdo dinâmico -->
+        <div id="conteudo">
+            {{{body}}} <!-- O conteúdo da página será inserido aqui -->
+            
+        </div>
+    </div>
+</body>
+</html>
