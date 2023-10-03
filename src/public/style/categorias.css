@@ -2,3 +2,20 @@
   
  width: 95%;
 }
+.categorias{
+  width: 95%;
+}
+.categorias h3{
+  text-align: start;
+  color: #fff;
+}
+.card{
+  padding-top: 10px;
+}
+cat{
+  color: rgb(107, 7, 89);
+}
+slg{
+  color: rgb(121, 121, 224);
+  font-weight: 600;
+}
