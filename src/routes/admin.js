@@ -9,9 +9,12 @@ router.get('/usuarios', homePainel.usuarios )
 router.get('/configura', homePainel.configura )
 
 router.get('/categorias/adicionar', homePainel.adicionar )
+router.get('/categorias/editar/:id', homePainel.editarCategoria)
 
 //ROTAS POST
 router.post('/categorias/adicionar/nova', homePainel.adcCategoria)
+router.post('/categorias/editar', homePainel.editCategoria)
+router.post('/categorias/deletar', homePainel.deletar)
 
 
 module.exports = router

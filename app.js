@@ -11,6 +11,7 @@ const flash = require('connect-flash')
 //Dot env e port
 require('dotenv').config()
 const port = process.env.PORT
+const BD = process.env.BD
 
 //Configurações
 
@@ -37,7 +38,7 @@ const port = process.env.PORT
     app.set('views', path.join(__dirname, 'src/views'))
     //Mongoose
     mongoose.Promise = global.Promise;
-    mongoose.connect("mongodb+srv://blogWhalter:1234@cluster0.9w12ozh.mongodb.net/?retryWrites=true&w=majority").then(()=>{
+    mongoose.connect(BD).then(()=>{
       console.log('Connectado com o MongoDB')
     }).catch((error)=>{
       console.log('Erro ao se connectar')
@@ -46,12 +47,14 @@ const port = process.env.PORT
     //Public
   app.use(express.static(path.join(__dirname, "src/public")))
 
-  
 //Rotas   
     //Admin
         app.use('/admin', admin)
 
+    //Pagina não encontrada
+        app.use((req, res)=>{
+        res.send('Página não encontrada');
+        });
 
- 
-app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => console.log(`Servidor rodando na porta : ${port}!`))

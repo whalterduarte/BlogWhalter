@@ -1,6 +1,8 @@
 .card{
-  
- width: 95%;
+ width: 100%;
+}
+.edit{
+  width: 95%;
 }
 .categorias{
   width: 95%;
@@ -18,4 +20,9 @@ cat{
 slg{
   color: rgb(121, 121, 224);
   font-weight: 600;
+}
+.criadeleta{
+  display: flex;
+  justify-content: space-around;
+  width: 190px;
 }

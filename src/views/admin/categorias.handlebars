@@ -10,14 +10,23 @@
 <div id="listcategorias">
   <div class="msgsuccess"> {{>_msg}}</div>
   {{#each categorias}}
-  <div class="card">
+  <div class="card  mt-3">
     <div class="card-body">
       <h4>Categoria: <cat>{{nome}}</cat></h4>
       <hr>
-      <small>Slug: <slg>{{slug}}</slg></small>
+      <small>Slug: <slg>{{slug}}</slg></small><br>
+      <small>Data de criação: {{date}}</small><br>
+      <div class="criadeleta">
+      <a href="/admin/categorias/editar/{{_id}}"><button class="btn btn-success mt-2" >Editar</button></a>
+      <form action="/admin/categorias/deletar" method="POST">
+        
+        <input type="hidden" name="id" value="{{_id}}">
+        <button class="btn btn-danger mt-2" >Deletar</button>
+      </form>
+      </div>
     </div>
   </div>
-  <br>
+  
   {{else}}
   {{/each}}
 </div>
