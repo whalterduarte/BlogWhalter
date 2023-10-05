@@ -1,1 +1,28 @@
 <h1>Postagens</h1>
+<a href="/admin/postagens/adicionar"><button class="botao">Nova postagem</button></a>
+<hr>
+
+<div class="msgsuccessPost"> {{>_msg}}</div>
+<div  class="categorias">
+<h3>Lista de postagens</h3>
+{{#each postagens}}
+  <div class="card mt-3">
+    <div class="card-body">
+        <h4>{{titulo}}</h4>
+        <div class="conteudo">{{conteudo}}</div>
+        <hr>
+        <p><span>Descrição:</span> {{descricao}}</p>
+         <hr>
+        <small><span>Categoria: </span><slg>{{categoria.nome}}</slg></small><br>
+        <small>{{data}}</small>
+       
+    </div>
+  </div>
+{{else}}  
+  <div class="card">
+    <div class="card-body" >
+       <h4>Nenhuma postagem cadastrada!</h4> 
+    </div>
+  </div>
+{{/each}}
+</div>

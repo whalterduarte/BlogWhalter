@@ -26,3 +26,20 @@ slg{
   justify-content: space-around;
   width: 190px;
 }
+.card h4 {
+  color: rgb(121, 121, 224);;
+}
+.select {
+  width: 50px;
+  max-width: 100px;
+}
+.msgsuccessPost{
+  width: 95%;
+}
+.conteudo{
+  font-size: 17px;
+  color: rgb(107, 7, 89);
+}
+span{
+  font-weight: 600;
+}
