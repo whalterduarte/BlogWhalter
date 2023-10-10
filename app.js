@@ -4,9 +4,11 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
-const admin = require('./src/routes/admin')
+const routeCategoria = require('./src/routes/categoria')
+const routePost = require('./src/routes/postagem')
 const session = require('express-session')
 const flash = require('connect-flash')
+const { categorias } = require('./src/controller/admin/categoriaControlle')
 
 //Dot env e port
 require('dotenv').config()
@@ -49,7 +51,8 @@ const BD = process.env.BD
 
 //Rotas   
     //Admin
-        app.use('/admin', admin)
+        app.use('/admin', routeCategoria)
+        app.use('/admin', routePost)
 
     //Pagina não encontrada
         app.use((req, res)=>{

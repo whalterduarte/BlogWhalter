@@ -4,12 +4,16 @@ require('../../models/Categorias')
 const Categoria = mongoose.model('categorias')
 
 
+                        /*CONTROLLER 
+                             DAS
+                          CATEGORIAS*/
 
+//Home do painel
 exports.home = (req,res)=>{
  res.render('admin/dashboard', { layout: 'admin-layout' })
 }
 
-
+//Home da categoria
 exports.categorias = (req,res)=>{
   Categoria.find().sort({date: 'desc'}).lean().then((categorias)=>{
     res.render('admin/categorias', { layout: 'admin-layout', categorias: categorias })
@@ -17,30 +21,15 @@ exports.categorias = (req,res)=>{
     req.flash('error_msg', 'Ouve um erro ao listar categorias')
     res.redirect('/admin')
   })
- 
 
 }
 
-
-exports.postagens = (req,res)=>{
- res.render('admin/postagens', { layout: 'admin-layout' })
-}
-
-exports.usuarios = (req,res)=>{
- res.render('admin/usuarios', { layout: 'admin-layout' })
-}
-
-
-exports.configura = (req,res)=>{
- res.render('admin/configura', { layout: 'admin-layout' })
-}
-
+//Pagina de adição 
 exports.adicionar = (req,res)=>{
   res.render('admin/addcategorias', { layout: 'admin-layout' })
  }
  
- 
-
+//Adiciona a categoria
  exports.adcCategoria = (req,res)=>{
 
       var erros = []
@@ -72,19 +61,18 @@ exports.adicionar = (req,res)=>{
      }
       }
 
-
- exports.editarCategoria = ((req,res)=>{
+//Exibe o conteudo da categoria no input
+ exports.editarCategoria = (req,res)=>{
       Categoria.findOne({_id: req.params.id}).lean().then((categoria)=>{
         res.render('admin/editarcategorias', { layout: 'admin-layout', categoria: categoria})
       }).catch((error)=>{
         req.flash('error_msg', 'Essa categoria não existe')
         res.redirect('../')
       })
- })
+ }
 
-
-
- exports.editCategoria = ((req, res)=>{
+//Edita categoria
+ exports.editCategoria = (req, res)=>{
   Categoria.findOne({_id: req.body.id}).then((categoria)=>{
 
     categoria.nome = req.body.nome
@@ -102,9 +90,10 @@ exports.adicionar = (req,res)=>{
     req.flash('error_msg', 'Houve um erro ao editar a categoria!')
     res.redirect('./')
   })
-})
+}
 
-exports.deletar = ((req,res)=>{
+//Deleta categoria
+exports.deletar = (req,res)=>{
   Categoria.deleteOne({_id : req.body.id}).then(()=>{
     req.flash('success_msg', 'Categoria deletada com sucesso!')
     res.redirect('./')
@@ -112,4 +101,4 @@ exports.deletar = ((req,res)=>{
     req.flash('error_msg', 'Houve um erro ao deletar a categoria')
     res.redirect('./')
   })
-})
+}
