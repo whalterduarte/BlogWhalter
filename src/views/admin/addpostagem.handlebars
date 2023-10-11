@@ -1,33 +1,35 @@
-<h1>Nova postagem</h1>
-<div class="card">
+
+<h3>Nova postagem</h3>
+<div class="card edit">
   <div class="card-body">
-    {{#each erros}}
-    <div class="alert alert-danger">{{texto}}</div>
-    {{else}}
+ 
+    <form action="/admin/postagens/adicionar" method="POST">
+      <label for="titulo">Título</label>
+      <input type="text" name="titulo" id="" class="form-control" >
+      <label for="slug">Slug</label>
+      <input type="text" name="slug" id="" class="form-control" >
+      <label for="titulo">Descrição</label>
+      <input type="text" name="descricao" id="" class="form-control" >
+      <label for="conteudo">Conteúdo</label>
+      <textarea name="conteudo" class="form-control"></textarea>
+ <label for="categoria">Categoria</label>
+<select name="categoria" class="form-select form-select-lg mb-3">
+  {{#if categorias.length}}
+    {{#each categorias}}
+      <option class="select form-control" value="{{_id}}">{{nome}}</option>
     {{/each}}
-  <form action="/admin/postagens/nova" method="POST">
-    <label for="titulo">Título:</label>
-    <input type="text" name="titulo" class="form-control">
-    
-    <label for="slug">Slug:</label>
-    <input type="text" name="slug" class="form-control">
-   
-    <label for="descricao">Descrição:</label>
-    <input type="text" name="descricao" class="form-control">
+  {{else}}
+    <option value="0">Nenhuma categoria registrada</option>
+  {{/if}}
+</select>
 
-    <label for="categoria">Categoria:</label>
-    <select name="categoria" class="form-select">
-      {{#each categorias}}
-        <option value="{{_id}}">{{nome}}</option>
-      {{else}}
-        <option value="0">Nenhuma categoria registrada</option>
-      {{/each}}
-    </select>
-
-    <label for="conteudo">Conteúdo:</label>
-    <textarea name="conteudo" cols="30" rows="10" class="form-control"></textarea>
-    <br>
-    <button class="btn btn-success" type="submit">Criar postagem</button>
-  </form>
+<div class="erros">
+  {{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+</div>
+      <button class="btn btn-success mt-1 " type="submit">Criar postagem</button>
+    </form>
   </div>
 </div>

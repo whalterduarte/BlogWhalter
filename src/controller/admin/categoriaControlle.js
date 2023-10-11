@@ -45,7 +45,7 @@ exports.adicionar = (req,res)=>{
         erros.push({texto: "Nome da categoria muito pequeno"})
       }
       if (erros.length > 0) {
-        res.render('admin/addcategorias', { layout: 'admin-layout', erros: erros });
+        res.render('admin/addcategorias', { layout: 'admin-layout', erros: erros })
       }else{
         const novaCategoria = {
           nome: req.body.nome,
