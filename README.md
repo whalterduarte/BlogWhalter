@@ -22,15 +22,9 @@ Configure as variáveis de ambiente:
 ## Crie um arquivo .env na raiz do projeto com as seguintes configurações:
 env
 
-MYSQL_DB=seu_banco_de_dados
+BD=Mongodb
+PORT:80
 
-MYSQL_USER=seu_usuario
-
-MYSQL_PASSWORD=sua_senha
-
-MYSQL_HOST=host_do_banco_de_dados
-
-MYSQL_PORT=porta_do_banco_de_dados
 
 ## Inicie o servidor:
 npm start
