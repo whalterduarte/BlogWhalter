@@ -12,7 +12,12 @@ const Postagem = mongoose.model('postagens')
 
 //Lista postagem
 exports.home = (req, res) =>{
-  res.render('admin/postagens', {layout: 'admin-layout'})
+  Postagem.find().populate('categoria').sort({data:'desc'}).lean().then((postagens)=>{
+  res.render('admin/postagens', {layout: 'admin-layout', postagens})
+  }).catch((err)=>{
+    req.flash('error_msg', 'Houve um erro ao listar as postagens')
+    res.send('erro ao listar postagens' + err.message)
+  })
 }
 
 //Formulario de postagem
